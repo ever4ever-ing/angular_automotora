@@ -6,7 +6,7 @@
 
   @if (autosFiltrados().length === 0) {
     <div class="estado-vacio">
-      <span class="estado-icono" aria-hidden="true">🔍</span>
+      <app-icon class="estado-icono" name="search" [size]="48" />
       <p>No hay vehículos que coincidan con los filtros.</p>
       <button type="button" class="btn-limpiar" (click)="limpiarFiltros()">Limpiar filtros</button>
     </div>
@@ -25,7 +25,9 @@
               <span class="auto-precio">${{ auto.precio | number }}</span>
             </div>
           </div>
-          <span class="auto-card-cta">Ver detalles →</span>
+          <span class="auto-card-cta">
+            Ver detalles <app-icon name="arrow-right" [size]="16" />
+          </span>
         </a>
       }
     </div>

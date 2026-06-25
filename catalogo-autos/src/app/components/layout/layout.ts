@@ -5,12 +5,13 @@ import { filter, map, startWith } from 'rxjs/operators';
 import { FormsModule } from '@angular/forms';
 import { SidebarAutos } from '../sidebar-autos/sidebar-autos';
 import { FiltrosAutos } from '../filtros-autos/filtros-autos';
+import { AppIcon } from '../app-icon/app-icon';
 import { Filtro } from '../../services/filtro';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, SidebarAutos, FormsModule, FiltrosAutos],
+  imports: [RouterOutlet, RouterLink, SidebarAutos, FormsModule, FiltrosAutos, AppIcon],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
 })

@@ -17,8 +17,12 @@
             <img
               [src]="auto()!.imagenes![imagenActual()]"
               [alt]="auto()!.marca + ' ' + auto()!.modelo">
-            <button class="carrusel-btn prev" (click)="imagenAnterior()" aria-label="Imagen anterior">❮</button>
-            <button class="carrusel-btn next" (click)="siguienteImagen()" aria-label="Imagen siguiente">❯</button>
+            <button class="carrusel-btn prev" (click)="imagenAnterior()" aria-label="Imagen anterior">
+              <app-icon name="chevron-left" [size]="22" />
+            </button>
+            <button class="carrusel-btn next" (click)="siguienteImagen()" aria-label="Imagen siguiente">
+              <app-icon name="chevron-right" [size]="22" />
+            </button>
             <span class="carrusel-indicador">{{ imagenActual() + 1 }} / {{ auto()!.imagenes!.length }}</span>
           </div>
 
@@ -82,13 +86,15 @@
       </section>
 
       <div class="acciones-sticky">
-        <a class="btn-volver" routerLink="/catalogo">← Catálogo</a>
+        <a class="btn-volver" routerLink="/catalogo">
+          <app-icon name="arrow-left" [size]="18" /> Catálogo
+        </a>
         <button type="button" class="btn-contactar">Contactar</button>
       </div>
     </article>
   } @else {
     <div class="no-encontrado">
-      <span class="estado-icono" aria-hidden="true">🚫</span>
+      <app-icon class="estado-icono" name="circle-x" [size]="48" />
       <h2>Vehículo no encontrado</h2>
       <p>Redirigiendo al catálogo...</p>
       <a class="btn-volver" routerLink="/catalogo">Ir al catálogo</a>

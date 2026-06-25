@@ -3,11 +3,12 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { DecimalPipe } from '@angular/common';
 import { Auto } from '../../models/auto';
 import { AutoService } from '../../services/auto';
+import { AppIcon } from '../app-icon/app-icon';
 
 @Component({
   selector: 'app-auto-detalle',
   standalone: true,
-  imports: [DecimalPipe, RouterLink],
+  imports: [DecimalPipe, RouterLink, AppIcon],
   templateUrl: './auto-detalle.html',
   styleUrl: './auto-detalle.css',
 })

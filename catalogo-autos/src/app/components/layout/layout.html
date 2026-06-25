@@ -3,11 +3,11 @@
     <div class="header-top">
       @if (esDetalle()) {
         <a routerLink="/catalogo" class="btn-back" aria-label="Volver al catálogo">
-          <span class="icon-back" aria-hidden="true">←</span>
+          <app-icon name="arrow-left" [size]="22" />
         </a>
       } @else {
         <div class="brand">
-          <span class="brand-icon" aria-hidden="true">🚗</span>
+          <app-icon class="brand-icon" name="car" [size]="24" />
           <h1 class="brand-title">AutoCatálogo</h1>
         </div>
       }
@@ -34,7 +34,7 @@
           class="toolbar-btn"
           [class.active]="panelMarcasAbierto()"
           (click)="togglePanelMarcas()">
-          <span aria-hidden="true">🏷️</span> Marcas
+          <app-icon name="tag" [size]="18" /> Marcas
         </button>
         <button
           type="button"
@@ -42,7 +42,7 @@
           [class.active]="panelFiltrosAbierto()"
           [class.has-badge]="filtrosActivos()"
           (click)="togglePanelFiltros()">
-          <span aria-hidden="true">⚙️</span> Filtros
+          <app-icon name="sliders" [size]="18" /> Filtros
         </button>
       </div>
     }
@@ -62,7 +62,6 @@
     </aside>
   </div>
 
-  <!-- Paneles móvil -->
   @if (panelMarcasAbierto() || panelFiltrosAbierto()) {
     <div class="overlay" (click)="cerrarPaneles()" aria-hidden="true"></div>
   }
@@ -70,7 +69,9 @@
   <div class="panel-mobile panel-marcas" [class.open]="panelMarcasAbierto()">
     <div class="panel-header">
       <h2>Marcas</h2>
-      <button type="button" class="btn-cerrar" (click)="cerrarPaneles()" aria-label="Cerrar">✕</button>
+      <button type="button" class="btn-cerrar" (click)="cerrarPaneles()" aria-label="Cerrar">
+        <app-icon name="x" [size]="18" />
+      </button>
     </div>
     <div class="panel-body">
       <app-sidebar-autos (marcaSeleccionada)="onMarcaSeleccionada($event)"></app-sidebar-autos>
@@ -80,7 +81,9 @@
   <div class="panel-mobile panel-filtros" [class.open]="panelFiltrosAbierto()">
     <div class="panel-header">
       <h2>Filtros</h2>
-      <button type="button" class="btn-cerrar" (click)="cerrarPaneles()" aria-label="Cerrar">✕</button>
+      <button type="button" class="btn-cerrar" (click)="cerrarPaneles()" aria-label="Cerrar">
+        <app-icon name="x" [size]="18" />
+      </button>
     </div>
     <div class="panel-body">
       <app-filtros-autos></app-filtros-autos>

@@ -4,11 +4,12 @@ import { RouterLink } from '@angular/router';
 import { Auto } from '../../models/auto';
 import { AutoService } from '../../services/auto';
 import { Filtro } from '../../services/filtro';
+import { AppIcon } from '../app-icon/app-icon';
 
 @Component({
   selector: 'app-auto-lista',
   standalone: true,
-  imports: [DecimalPipe, RouterLink],
+  imports: [DecimalPipe, RouterLink, AppIcon],
   templateUrl: './auto-lista.html',
   styleUrls: ['./auto-lista.css']
 })

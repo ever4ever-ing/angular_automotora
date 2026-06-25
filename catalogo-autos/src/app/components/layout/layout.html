@@ -1,0 +1,24 @@
+<section class="layout">
+  <div class="header">
+    <h1>Catálogo de Automóviles</h1>
+    <div class="buscador">
+      <input 
+        type="text" 
+        [(ngModel)]="textoBusqueda" 
+        (input)="onBuscar()"
+        placeholder="Buscar por marca..." 
+        class="input-buscar">
+      <button (click)="onBuscar()" class="btn-buscar">🔍</button>
+    </div>
+  </div>
+  <div class="leftSide">
+    <app-sidebar-autos (marcaSeleccionada)="onMarcaSeleccionada($event)"></app-sidebar-autos>
+  </div>
+  <div class="body">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="rightSide">
+    <app-filtros-autos></app-filtros-autos>
+  </div>
+  <div class="footer">Footer</div>
+</section>

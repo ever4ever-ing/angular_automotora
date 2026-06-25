@@ -1,0 +1,44 @@
+<div class="filtros-container">
+  <h3>Filtros</h3>
+  
+  <div class="filtro-group">
+    <label>Precio Mínimo</label>
+    <input 
+      type="range" 
+      [(ngModel)]="precioMin" 
+      (input)="onPrecioMinChange()"
+      min="0" 
+      max="100000" 
+      step="1000"
+      class="slider">
+    <span class="valor">${{precioMin | number}}</span>
+  </div>
+
+  <div class="filtro-group">
+    <label>Precio Máximo</label>
+    <input 
+      type="range" 
+      [(ngModel)]="precioMax" 
+      (input)="onPrecioMaxChange()"
+      min="0" 
+      max="100000" 
+      step="1000"
+      class="slider">
+    <span class="valor">${{precioMax | number}}</span>
+  </div>
+
+  <div class="filtro-group">
+    <label>Kilometraje Máximo</label>
+    <input 
+      type="range" 
+      [(ngModel)]="kilometrajeMax" 
+      (input)="onKilometrajeChange()"
+      min="0" 
+      max="200000" 
+      step="5000"
+      class="slider">
+    <span class="valor">{{kilometrajeMax | number}} km</span>
+  </div>
+
+  <button class="btn-reset" (click)="resetFiltros()">Limpiar filtros</button>
+</div>

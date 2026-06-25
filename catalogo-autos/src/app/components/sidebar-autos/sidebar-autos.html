@@ -1,0 +1,10 @@
+<section class="layout">
+    <div class="marca-item" (click)="mostrarTodos()">
+        <strong>Todas las marcas</strong>
+    </div>
+    @for (marca of marcas; track marca) {
+        <div class="marca-item" (click)="seleccionarMarca(marca)">
+            {{marca}}
+        </div>
+    }
+</section>

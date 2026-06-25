@@ -1,0 +1,15 @@
+<div class="catalogo-container">
+  <h2>Vehículos Disponibles</h2>
+  
+  <div class="auto-grid">
+    @for (auto of autosFiltrados(); track auto.id) {
+      <div class="auto-card">
+        <img [src]="auto.imagen" [alt]="auto.marca + ' ' + auto.modelo">
+        <h3>{{auto.marca}} {{auto.modelo}}</h3>
+        <p>Año: {{auto.anio}}</p>
+        <p>Precio: ${{auto.precio | number}}</p>
+        <button [routerLink]="['/auto', auto.id]">Ver Detalles</button>
+      </div>
+    }
+  </div>
+</div>

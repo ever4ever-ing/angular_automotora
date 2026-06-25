@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "marca": "Toyota",
+    "modelo": "Corolla",
+    "anio": 2023,
+    "precio": 25000,
+    "imagen": "https://tse4.mm.bing.net/th/id/OIP.Bft4vJHz9arpyg55QIzrGgHaDt?rs=1&pid=ImgDetMain&o=7&rm=3",
+    "imagenes": [
+      "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1623869675781-80aa31bc803e?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1623869675946-5ec1f8bba551?w=600&h=400&fit=crop"
+    ],
+    "color": "Blanco",
+    "kilometraje": 15000,
+    "descripcion": "Toyota Corolla 2023 en excelente estado, con todas las revisiones al día."
+  },
+  {
+    "id": 2,
+    "marca": "Honda",
+    "modelo": "Civic",
+    "anio": 2022,
+    "precio": 28000,
+    "imagen": "https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/cropped_kiivc2.jpg",
+    "imagenes": [
+      "https://images.unsplash.com/photo-1590362891991-f776e747a588?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600&h=400&fit=crop"
+    ],
+    "color": "Gris",
+    "kilometraje": 20000,
+    "descripcion": "Honda Civic 2022, modelo deportivo con bajo kilometraje."
+  },
+  {
+    "id": 3,
+    "marca": "Ford",
+    "modelo": "Mustang",
+    "anio": 2023,
+    "precio": 45000,
+    "imagen": "https://th.bing.com/th/id/R.7ed5eef1cb1c0faf0e06bd29f900e2ff?rik=5SPdYr3n5Lfuvw&riu=http%3a%2f%2fstatic4.businessinsider.com%2fimage%2f58fe49fb0ba0b8ea048b59e9-2400&ehk=eEn110aUTrq0hz%2bJ%2fBb1VuOewIbx42WnS1noEQ4JBIM%3d&risl=&pid=ImgRaw&r=0",
+    "imagenes": [
+      "https://images.unsplash.com/photo-1584345604476-8ec5f7e7d6d0?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1494905998402-395d579af36f?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1547744152-14d985cb937c?w=600&h=400&fit=crop"
+    ],
+    "color": "Rojo",
+    "kilometraje": 5000,
+    "descripcion": "Ford Mustang 2023, potencia y estilo americano."
+  },
+  {
+    "id": 4,
+    "marca": "Chevrolet",
+    "modelo": "Camaro",
+    "anio": 2021,
+    "precio": 38000,
+    "imagen": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&h=400&fit=crop",
+    "imagenes": [
+      "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&h=400&fit=crop"
+    ],
+    "color": "Amarillo",
+    "kilometraje": 18000,
+    "descripcion": "Chevrolet Camaro 2021, muscle car en perfectas condiciones."
+  },
+  {
+    "id": 5,
+    "marca": "Nissan",
+    "modelo": "Altima",
+    "anio": 2023,
+    "precio": 27000,
+    "imagen": "https://tse4.mm.bing.net/th/id/OIP._dhkhe8JqU2a4aBfoxlhqgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
+    "imagenes": [
+      "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1617469767053-d3b523a0b982?w=600&h=400&fit=crop"
+    ],
+    "color": "Negro",
+    "kilometraje": 12000,
+    "descripcion": "Nissan Altima 2023, sedán familiar con gran espacio interior."
+  },
+  {
+    "id": 6,
+    "marca": "BMW",
+    "modelo": "Serie 3",
+    "anio": 2023,
+    "precio": 52000,
+    "imagen": "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&h=400&fit=crop",
+    "imagenes": [
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1617531653520-bd466ee81df9?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1617654112368-307921291f42?w=600&h=400&fit=crop"
+    ],
+    "color": "Azul",
+    "kilometraje": 8000,
+    "descripcion": "BMW Serie 3 2023, lujo y deportividad alemana."
+  },
+  {
+    "id": 7,
+    "marca": "Mercedes-Benz",
+    "modelo": "Clase C",
+    "anio": 2022,
+    "precio": 55000,
+    "imagen": "https://th.bing.com/th/id/R.6f72e9bd4aa28de07ba57d1dc15df53b?rik=ywacda5FAfoFVA&pid=ImgRaw&r=0",
+    "imagenes": [
+      "https://images.unsplash.com/photo-1618843479619-f3d0d3e8c25a?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=600&h=400&fit=crop"
+    ],
+    "color": "Plata",
+    "kilometraje": 10000,
+    "descripcion": "Mercedes-Benz Clase C 2022, elegancia y tecnología premium."
+  },
+  {
+    "id": 8,
+    "marca": "Audi",
+    "modelo": "A4",
+    "anio": 2023,
+    "precio": 48000,
+    "imagen": "https://tse4.mm.bing.net/th/id/OIP.MZ71nOs7sALtoAz9pLXldQHaFP?rs=1&pid=ImgDetMain&o=7&rm=3",
+    "imagenes": [
+      "https://images.unsplash.com/photo-1610768764270-790fbec18178?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1614200179396-2bdb77ebf81b?w=600&h=400&fit=crop"
+    ],
+    "color": "Blanco",
+    "kilometraje": 6000,
+    "descripcion": "Audi A4 2023, diseño moderno con tecnología avanzada."
+  },
+  {
+    "id": 9,
+    "marca": "Volkswagen",
+    "modelo": "Jetta",
+    "anio": 2022,
+    "precio": 24000,
+    "imagen": "https://cdn.motor1.com/images/mgl/3Wnbq6/s1/2025-volkswagen-jetta-gli.jpg",
+    "imagenes": [
+      "https://images.unsplash.com/photo-1622998661857-364f20e8c4c9?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1611859266238-4b98091d9d9b?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=600&h=400&fit=crop"
+    ],
+    "color": "Gris",
+    "kilometraje": 22000,
+    "descripcion": "Volkswagen Jetta 2022, sedán confiable y económico."
+  },
+  {
+    "id": 10,
+    "marca": "Hyundai",
+    "modelo": "Elantra",
+    "anio": 2023,
+    "precio": 23000,
+    "imagen": "https://tse2.mm.bing.net/th/id/OIP.g4HVYj8jXAVDrzdzjadX1AHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
+    "imagenes": [
+      "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1542282088-fe8426682b8f?w=600&h=400&fit=crop"
+    ],
+    "color": "Rojo",
+    "kilometraje": 9000,
+    "descripcion": "Hyundai Elantra 2023, excelente relación calidad-precio."
+  }
+]

@@ -1,0 +1,99 @@
+<div class="detalle-container">
+  @if (cargando()) {
+    <div class="cargando">
+      <h2>Cargando vehículo...</h2>
+    </div>
+  } @else if (auto()) {
+    <div class="detalle-content">
+      
+      <div class="carrusel-container">
+        <h2>{{auto()!.marca}} {{auto()!.modelo}}</h2>
+        
+        <!-- Carrusel de imágenes -->
+        <div class="carrusel">
+          @if (auto()!.imagenes && auto()!.imagenes!.length > 0) {
+            <button class="carrusel-btn prev" (click)="imagenAnterior()">❮</button>
+            
+            <div class="imagen-principal">
+              <img [src]="auto()!.imagenes![imagenActual()]" [alt]="auto()!.marca + ' ' + auto()!.modelo">
+            </div>
+            
+            <button class="carrusel-btn next" (click)="siguienteImagen()">❯</button>
+            
+            <!-- Miniaturas -->
+            <div class="miniaturas">
+              @for (imagen of auto()!.imagenes!; track $index) {
+                <img 
+                  [src]="imagen" 
+                  [alt]="'Imagen ' + ($index + 1)"
+                  [class.active]="imagenActual() === $index"
+                  (click)="seleccionarImagen($index)">
+              }
+            </div>
+          } @else {
+            <div class="imagen-principal">
+              <img [src]="auto()!.imagen" [alt]="auto()!.marca + ' ' + auto()!.modelo">
+            </div>
+          }
+        </div>
+      </div>
+
+      <button class="btn-volver" [routerLink]="['/catalogo']">← Volver al catálogo</button>
+      
+      
+      <!-- Detalles del vehículo -->
+      <div class="detalles-info">
+        <h3>Detalles del vehículo</h3>
+        
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="label">Marca:</span>
+            <span class="value">{{auto()!.marca}}</span>
+          </div>
+          
+          <div class="info-item">
+            <span class="label">Modelo:</span>
+            <span class="value">{{auto()!.modelo}}</span>
+          </div>
+          
+          <div class="info-item">
+            <span class="label">Año:</span>
+            <span class="value">{{auto()!.anio}}</span>
+          </div>
+          
+          <div class="info-item">
+            <span class="label">Color:</span>
+            <span class="value">{{auto()!.color}}</span>
+          </div>
+          
+          <div class="info-item">
+            <span class="label">Kilometraje:</span>
+            <span class="value">{{auto()!.kilometraje | number}} km</span>
+          </div>
+          
+          <div class="info-item precio">
+            <span class="label">Precio:</span>
+            <span class="value">${{auto()!.precio | number}}</span>
+          </div>
+        </div>
+        
+        @if (auto()!.descripcion) {
+          <div class="descripcion">
+            <h4>Descripción</h4>
+            <p>{{auto()!.descripcion}}</p>
+          </div>
+        }
+        
+        <div class="acciones">
+          <button class="btn-contactar">Contactar vendedor</button>
+          <button class="btn-favorito">Agregar a favoritos</button>
+        </div>
+      </div>
+    </div>
+  } @else {
+    <div class="no-encontrado">
+      <h2>Vehículo no encontrado</h2>
+      <button [routerLink]="['/catalogo']">Volver al catálogo</button>
+    </div>
+  }
+</div>

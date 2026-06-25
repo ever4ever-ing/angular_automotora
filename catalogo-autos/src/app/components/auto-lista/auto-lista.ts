@@ -73,4 +73,8 @@ export class AutoListaComponent implements OnInit {
     console.log('Autos filtrados:', resultado.length);
     this.autosFiltrados.set(resultado);
   }
+
+  limpiarFiltros(): void {
+    this.filtroService.resetFiltros();
+  }
 }

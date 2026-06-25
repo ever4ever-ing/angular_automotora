@@ -1,24 +1,93 @@
-<section class="layout">
-  <div class="header">
-    <h1>Catálogo de Automóviles</h1>
-    <div class="buscador">
-      <input 
-        type="text" 
-        [(ngModel)]="textoBusqueda" 
-        (input)="onBuscar()"
-        placeholder="Buscar por marca..." 
-        class="input-buscar">
-      <button (click)="onBuscar()" class="btn-buscar">🔍</button>
+<div class="app-shell">
+  <header class="app-header">
+    <div class="header-top">
+      @if (esDetalle()) {
+        <a routerLink="/catalogo" class="btn-back" aria-label="Volver al catálogo">
+          <span class="icon-back" aria-hidden="true">←</span>
+        </a>
+      } @else {
+        <div class="brand">
+          <span class="brand-icon" aria-hidden="true">🚗</span>
+          <h1 class="brand-title">AutoCatálogo</h1>
+        </div>
+      }
+
+      @if (!esDetalle()) {
+        <div class="buscador">
+          <input
+            type="search"
+            [(ngModel)]="textoBusqueda"
+            (input)="onBuscar()"
+            placeholder="Buscar marca..."
+            class="input-buscar"
+            aria-label="Buscar por marca">
+        </div>
+      } @else {
+        <h1 class="header-detalle-title">Detalle del vehículo</h1>
+      }
+    </div>
+
+    @if (!esDetalle()) {
+      <div class="mobile-toolbar">
+        <button
+          type="button"
+          class="toolbar-btn"
+          [class.active]="panelMarcasAbierto()"
+          (click)="togglePanelMarcas()">
+          <span aria-hidden="true">🏷️</span> Marcas
+        </button>
+        <button
+          type="button"
+          class="toolbar-btn"
+          [class.active]="panelFiltrosAbierto()"
+          [class.has-badge]="filtrosActivos()"
+          (click)="togglePanelFiltros()">
+          <span aria-hidden="true">⚙️</span> Filtros
+        </button>
+      </div>
+    }
+  </header>
+
+  <div class="app-body">
+    <aside class="sidebar-desktop" aria-label="Marcas">
+      <app-sidebar-autos (marcaSeleccionada)="onMarcaSeleccionada($event)"></app-sidebar-autos>
+    </aside>
+
+    <main class="main-content">
+      <router-outlet></router-outlet>
+    </main>
+
+    <aside class="filtros-desktop" aria-label="Filtros">
+      <app-filtros-autos></app-filtros-autos>
+    </aside>
+  </div>
+
+  <!-- Paneles móvil -->
+  @if (panelMarcasAbierto() || panelFiltrosAbierto()) {
+    <div class="overlay" (click)="cerrarPaneles()" aria-hidden="true"></div>
+  }
+
+  <div class="panel-mobile panel-marcas" [class.open]="panelMarcasAbierto()">
+    <div class="panel-header">
+      <h2>Marcas</h2>
+      <button type="button" class="btn-cerrar" (click)="cerrarPaneles()" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="panel-body">
+      <app-sidebar-autos (marcaSeleccionada)="onMarcaSeleccionada($event)"></app-sidebar-autos>
     </div>
   </div>
-  <div class="leftSide">
-    <app-sidebar-autos (marcaSeleccionada)="onMarcaSeleccionada($event)"></app-sidebar-autos>
+
+  <div class="panel-mobile panel-filtros" [class.open]="panelFiltrosAbierto()">
+    <div class="panel-header">
+      <h2>Filtros</h2>
+      <button type="button" class="btn-cerrar" (click)="cerrarPaneles()" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="panel-body">
+      <app-filtros-autos></app-filtros-autos>
+    </div>
   </div>
-  <div class="body">
-    <router-outlet></router-outlet>
-  </div>
-  <div class="rightSide">
-    <app-filtros-autos></app-filtros-autos>
-  </div>
-  <div class="footer">Footer</div>
-</section>
+
+  <footer class="app-footer">
+    <p>© {{ 2026 }} AutoCatálogo — Encuentra tu próximo vehículo</p>
+  </footer>
+</div>

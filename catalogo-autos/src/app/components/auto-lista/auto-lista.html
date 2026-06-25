@@ -1,15 +1,33 @@
 <div class="catalogo-container">
-  <h2>Vehículos Disponibles</h2>
-  
-  <div class="auto-grid">
-    @for (auto of autosFiltrados(); track auto.id) {
-      <div class="auto-card">
-        <img [src]="auto.imagen" [alt]="auto.marca + ' ' + auto.modelo">
-        <h3>{{auto.marca}} {{auto.modelo}}</h3>
-        <p>Año: {{auto.anio}}</p>
-        <p>Precio: ${{auto.precio | number}}</p>
-        <button [routerLink]="['/auto', auto.id]">Ver Detalles</button>
-      </div>
-    }
+  <div class="catalogo-header">
+    <h2>Vehículos disponibles</h2>
+    <span class="contador">{{ autosFiltrados().length }} resultado{{ autosFiltrados().length !== 1 ? 's' : '' }}</span>
   </div>
+
+  @if (autosFiltrados().length === 0) {
+    <div class="estado-vacio">
+      <span class="estado-icono" aria-hidden="true">🔍</span>
+      <p>No hay vehículos que coincidan con los filtros.</p>
+      <button type="button" class="btn-limpiar" (click)="limpiarFiltros()">Limpiar filtros</button>
+    </div>
+  } @else {
+    <div class="auto-grid">
+      @for (auto of autosFiltrados(); track auto.id) {
+        <a class="auto-card" [routerLink]="['/auto', auto.id]">
+          <div class="auto-card-img">
+            <img [src]="auto.imagen" [alt]="auto.marca + ' ' + auto.modelo" loading="lazy">
+          </div>
+          <div class="auto-card-body">
+            <h3>{{ auto.marca }} {{ auto.modelo }}</h3>
+            <p class="auto-anio">{{ auto.anio }}</p>
+            <div class="auto-meta">
+              <span class="auto-km">{{ auto.kilometraje | number }} km</span>
+              <span class="auto-precio">${{ auto.precio | number }}</span>
+            </div>
+          </div>
+          <span class="auto-card-cta">Ver detalles →</span>
+        </a>
+      }
+    </div>
+  }
 </div>

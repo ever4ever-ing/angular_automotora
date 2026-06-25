@@ -1,18 +1,56 @@
-.layout {
-  width: 100%;
-
+.marcas-nav {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-
-  justify-content: space-around;
-  background-color: rgb(56, 91, 196);
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.marca-item {
-  padding: 8px;
-  background-color: royalblue;
-  color: white;
-  text-align: center;
-  cursor: pointer;
+.marca-chip {
+  padding: 8px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  min-height: 40px;
+}
+
+.marca-chip:active {
+  transform: scale(0.97);
+}
+
+.marca-chip.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .marcas-nav {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
+  .marca-chip {
+    width: 100%;
+    text-align: left;
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+  }
+}
+
+/* En panel móvil: scroll horizontal de chips */
+:host-context(.panel-marcas) .marcas-nav {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+:host-context(.panel-marcas) .marcas-nav::-webkit-scrollbar {
+  display: none;
 }

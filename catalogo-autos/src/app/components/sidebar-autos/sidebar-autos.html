@@ -1,10 +1,18 @@
-<section class="layout">
-    <div class="marca-item" (click)="mostrarTodos()">
-        <strong>Todas las marcas</strong>
-    </div>
-    @for (marca of marcas; track marca) {
-        <div class="marca-item" (click)="seleccionarMarca(marca)">
-            {{marca}}
-        </div>
-    }
-</section>
+<nav class="marcas-nav" aria-label="Filtrar por marca">
+  <button
+    type="button"
+    class="marca-chip"
+    [class.active]="filtroService.marcaSeleccionada() === ''"
+    (click)="mostrarTodos()">
+    Todas
+  </button>
+  @for (marca of marcas; track marca) {
+    <button
+      type="button"
+      class="marca-chip"
+      [class.active]="isActive(marca)"
+      (click)="seleccionarMarca(marca)">
+      {{ marca }}
+    </button>
+  }
+</nav>

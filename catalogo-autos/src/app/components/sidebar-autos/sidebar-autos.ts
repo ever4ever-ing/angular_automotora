@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
 import { MarcasService } from '../../services/marcas';
+import { Filtro } from '../../services/filtro';
 
 @Component({
   selector: 'app-sidebar-autos',
@@ -7,12 +8,13 @@ import { MarcasService } from '../../services/marcas';
   templateUrl: './sidebar-autos.html',
   styleUrl: './sidebar-autos.css',
 })
-export class SidebarAutos {
+export class SidebarAutos implements OnInit {
+  private marcaService = inject(MarcasService);
+  filtroService = inject(Filtro);
+
   marcas: string[] = [];
   @Output() marcaSeleccionada = new EventEmitter<string>();
 
-  constructor(private marcaService: MarcasService) {}
-  
   ngOnInit(): void {
     this.marcas = this.marcaService.getMarcas();
   }
@@ -24,5 +26,8 @@ export class SidebarAutos {
   mostrarTodos(): void {
     this.marcaSeleccionada.emit('');
   }
+
+  isActive(marca: string): boolean {
+    return this.filtroService.marcaSeleccionada() === marca;
+  }
 }
- 
